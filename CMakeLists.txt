@@ -21,6 +21,7 @@ add_hpx_executable(simple_component
               SOURCES hpx_main.cpp   
                       simple_component_client.cpp
                       simple_component.cpp
+                      component_definitions.cpp
               HEADERS simple_component_client.hpp
                       simple_component.hpp 
               DEPENDENCIES -g

@@ -1,30 +1,16 @@
-#include "simple_component.hpp" 
+#include "simple_component.hpp"
 
-#include <hpx/hpx.hpp>
-#include <hpx/runtime/components/component_factory.hpp>
+#include <hpx/hpx_main.hpp>
+#include <hpx/include/components.hpp>
 
-#include <hpx/util/portable_binary_iarchive.hpp>
-#include <hpx/util/portable_binary_oarchive.hpp>
+using simple::server::my_simple_component;
+using namespace simple::server;
 
-#include <boost/serialization/version.hpp>
-#include <boost/serialization/export.hpp>
+void
+my_simple_component::distributeToAll(){
 
-//server's cpp
-//[simple_accumulator_registration_definitions
-///////////////////////////////////////////////////////////////////////////////
-// Add factory registration functionality.
-HPX_REGISTER_COMPONENT_MODULE();
+  std::cout<<"I am printing this from "<<hpx::find_here() <<std::endl; 
 
-typedef hpx::components::simple_component<
-    simple::server::my_simple_component
-> simpleAccumulator;
-
-HPX_REGISTER_MINIMAL_COMPONENT_FACTORY(simpleAccumulator,my_simple_component);
-
-///////////////////////////////////////////////////////////////////////////////
-// Serialization support for managed_accumulator actions.
-HPX_REGISTER_ACTION(
-    simpleAccumulator::wrapped_type::distributeToAll_action,
-    my_simple_component_distributeToAll_action);
+}
 
 

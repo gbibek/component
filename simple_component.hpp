@@ -16,16 +16,12 @@ namespace simple { namespace server
       public:
         
         my_simple_component():value(0){};     
-        my_simple_component(int BlockSize){
-            value = BlockSize;
-        }
-        void distributeToAll(){
-      
-            std::cout<<"I am printing this from "<<hpx::find_here() <<std::endl;
-      
-        }
-    
-      HPX_DEFINE_COMPONENT_ACTION(my_simple_component,distributeToAll);
+        my_simple_component(int BlockSize):value(BlockSize){}
+        void distributeToAll();    
+
+
+        HPX_DEFINE_COMPONENT_ACTION(my_simple_component,distributeToAll);
+
       private:
         int value;
    

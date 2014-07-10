@@ -15,8 +15,8 @@ namespace simple { namespace server
    {
       public:
         
-        my_simple_component_server():value(0){};     
-        my_simple_component_server(int BlockSize){
+        my_simple_component():value(0){};     
+        my_simple_component(int BlockSize){
             value = BlockSize;
         }
         void distributeToAll(){

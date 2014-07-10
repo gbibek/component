@@ -8,7 +8,7 @@ int hpx_main(){
     simple::my_simple_component obj(
              hpx::components::new_<simple::server::my_simple_component>(hpx::find_here())); 
  
-    simple_component_obj.distributeToAll();
+    obj.distributeToAll();
  
     return hpx::finalize();
 }

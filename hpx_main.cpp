@@ -1,4 +1,4 @@
-#include "simple_component_client.hpp"
+#include "simple_component.hpp"
 
 #include <hpx/hpx_main.hpp>
 #include <hpx/hpx.hpp>

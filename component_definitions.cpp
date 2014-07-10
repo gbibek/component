@@ -1,8 +1,6 @@
 
 
 #include "simple_component.hpp"
-#include "simple_component_client.hpp"
-
 #include <hpx/hpx.hpp>
 #include <hpx/runtime/components/component_factory.hpp>
 

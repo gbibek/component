@@ -1,16 +1,21 @@
+
+#include <hpx/hpx.hpp>
+#include <hpx/runtime/components/component_factory.hpp>
+
+#include <hpx/util/portable_binary_iarchive.hpp>
+#include <hpx/util/portable_binary_oarchive.hpp>
+#include <boost/serialization/vector.hpp>
+
 #include "simple_component.hpp"
 
-#include <hpx/hpx_main.hpp>
-#include <hpx/include/components.hpp>
 
-using simple::server::my_simple_component;
-using namespace simple::server;
+using simple::my_simple_component;
 
-void
+hpx::lcos::future<void>
 my_simple_component::distributeToAll(){
 
-  std::cout<<"I am printing this from "<<hpx::find_here() <<std::endl; 
+    BOOST_ASSERT(this->get_gid());
+    typedef simple::server::my_simple_component::distributeToAll_action func;
+    hpx::async<func>(this->get_gid());
 
 }
-
-

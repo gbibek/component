@@ -1,35 +1,34 @@
 
-#include <hpx/hpx_fwd.hpp>
-#include <hpx/runtime/components/server/simple_component_base.hpp>
-#include <iostream>
+#include "server/simple_component.hpp"  
+
 #include <hpx/include/components.hpp>
-#include <hpx/runtime/actions/component_action.hpp>
-// server
-
-namespace simple { namespace server
-{
-    
-    
-   class my_simple_component
-      : hpx::components::simple_component_base<my_simple_component>
-   {
-      public:
-        
-        my_simple_component():value(0){};     
-        my_simple_component(int BlockSize):value(BlockSize){}
-        void distributeToAll();    
+#include <hpx/lcos/future.hpp>
 
 
-        HPX_DEFINE_COMPONENT_ACTION(my_simple_component,distributeToAll);
+//server included
 
-      private:
-        int value;
+
+
+// client 
+namespace simple {
    
-   };
-
-}}    
-
-HPX_REGISTER_ACTION_DECLARATION(
-    simple::server::my_simple_component::distributeToAll_action,
-    my_simple_component_distributeToAll_action);
+  class my_simple_component
+    : public hpx::components::client_base<
+        my_simple_component, hpx::components::stub_base<server::my_simple_component>
+      > 
+  {       
+    typedef hpx::components::client_base<                                       
+        my_simple_component, hpx::components::stub_base<server::my_simple_component>
+      > base_type;
+     
+    public: 
+      // empty constructor for hpx purpose .. 
+      my_simple_component(){};  
+      my_simple_component(hpx::future<hpx::naming::id_type> && gid)
+       : base_type(std::move(gid))
+      {}
+      // calls the void function that prints the message from a given locality
+      hpx::lcos::future<void> distributeToAll();
+  };
+}
 

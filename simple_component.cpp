@@ -1,4 +1,6 @@
 
+#include "simple_component.hpp"
+
 #include <hpx/hpx.hpp>
 #include <hpx/runtime/components/component_factory.hpp>
 
@@ -6,7 +8,6 @@
 #include <hpx/util/portable_binary_oarchive.hpp>
 #include <boost/serialization/vector.hpp>
 
-#include "simple_component.hpp"
 
 
 using simple::my_simple_component;

@@ -1,10 +1,11 @@
 
+#include "simple_component.hpp"  
+
 #include <hpx/include/components.hpp>
 #include <hpx/lcos/future.hpp>
 
 
 //server included
-#include "simple_component.hpp" 
 
 
 

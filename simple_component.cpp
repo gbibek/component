@@ -1,3 +1,4 @@
+#include "simple_component.hpp" 
 
 #include <hpx/hpx.hpp>
 #include <hpx/runtime/components/component_factory.hpp>
@@ -8,7 +9,6 @@
 #include <boost/serialization/version.hpp>
 #include <boost/serialization/export.hpp>
 
-#include "simple_component.hpp"
 //server's cpp
 //[simple_accumulator_registration_definitions
 ///////////////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ HPX_REGISTER_MINIMAL_COMPONENT_FACTORY(simpleAccumulator,my_simple_component);
 ///////////////////////////////////////////////////////////////////////////////
 // Serialization support for managed_accumulator actions.
 HPX_REGISTER_ACTION(
-    simpleAccumulator::wrapped_type::distributeToAll,
+    simpleAccumulator::wrapped_type::distributeToAll_action,
     my_simple_component_distributeToAll_action);
 
 

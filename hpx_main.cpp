@@ -1,7 +1,8 @@
+#include "simple_component_client.hpp"
+
 #include <hpx/hpx_main.hpp>
 #include <hpx/hpx.hpp>
 #include <hpx/hpx_init.hpp>
-#include "simple_component_client.hpp"
 int hpx_main(){
   
     //typedef my_simple_component obj;    

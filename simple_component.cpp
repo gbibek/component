@@ -8,15 +8,16 @@
 #include <hpx/util/portable_binary_oarchive.hpp>
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/export.hpp>
+#include <hpx/runtime/applier/apply.hpp>
+#include <hpx/include/async.hpp>
 
-
-using simple::my_simple_component;
+using hpx::simple::my_simple_component;
 
 hpx::lcos::future<void>
 my_simple_component::distributeToAll(){
 
     BOOST_ASSERT(this->get_gid());
-    typedef simple::server::my_simple_component::distributeToAll_action func;
+    typedef hpx::simple::server::my_simple_component::distributeToAll_action func;
     hpx::async<func>(this->get_gid());
 
 }

@@ -3,14 +3,14 @@
 
 #include <hpx/include/components.hpp>
 #include <hpx/lcos/future.hpp>
-
+#include <hpx/runtime/components/stubs/stub_base.hpp>
 
 //server included
 
 
 
 // client 
-namespace simple {
+namespace hpx { namespace simple {
    
   class my_simple_component
     : public hpx::components::client_base<
@@ -30,5 +30,5 @@ namespace simple {
       // calls the void function that prints the message from a given locality
       hpx::lcos::future<void> distributeToAll();
   };
-}
+}}
 

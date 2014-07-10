@@ -1,7 +1,7 @@
 
 
 #include "server/simple_component.hpp"
-#include "simple_component.hpp"
+//#include "simple_component.hpp"
 
 #include <hpx/hpx.hpp>
 #include <hpx/runtime/components/component_factory.hpp>
@@ -14,7 +14,7 @@ HPX_REGISTER_COMPONENT_MODULE();
 
 
 typedef hpx::components::simple_component<
-    simple::server::my_simple_component
+    hpx::simple::server::my_simple_component
 > simpleAccumulator;
 
 HPX_REGISTER_MINIMAL_COMPONENT_FACTORY(simpleAccumulator,my_simple_component);

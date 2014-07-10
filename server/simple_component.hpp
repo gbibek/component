@@ -6,7 +6,7 @@
 #include <hpx/runtime/actions/component_action.hpp>
 // server
 
-namespace simple { namespace server
+namespace hpx { namespace simple { namespace server
 {
      
    class my_simple_component
@@ -14,21 +14,21 @@ namespace simple { namespace server
    {
       public:
         
-        my_simple_component():value(0){}     
-        my_simple_component(int BlockSize):value(BlockSize){}
+        my_simple_component(){}//:value(0){}     
+        //my_simple_component(int BlockSize):value(BlockSize){}
         void distributeToAll();    
 
 
         HPX_DEFINE_COMPONENT_ACTION(my_simple_component,distributeToAll);
 
       private:
-        int value;
+       // int value;
    
    };
 
-}}    
+}}}    
 
 HPX_REGISTER_ACTION_DECLARATION(
-    simple::server::my_simple_component::distributeToAll_action,
+    hpx::simple::server::my_simple_component::distributeToAll_action,
     my_simple_component_distributeToAll_action);
 

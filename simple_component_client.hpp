@@ -23,8 +23,8 @@ namespace simple {
     public: 
       // empty constructor for hpx purpose .. 
       my_simple_component(){};  
-      my_simple_component(hpx::future<hpx::naming::id_type> const& gid)
-       : base_type(gid)
+      my_simple_component(hpx::future<hpx::naming::id_type> && gid)
+       : base_type(std::move(gid))
       {}
       // calls the void function that prints the message from a given locality
       hpx::lcos::future<void> distributeToAll();

@@ -7,7 +7,7 @@
 #include <hpx/util/portable_binary_iarchive.hpp>
 #include <hpx/util/portable_binary_oarchive.hpp>
 #include <boost/serialization/vector.hpp>
-
+#include <boost/serialization/export.hpp>
 
 
 using simple::my_simple_component;

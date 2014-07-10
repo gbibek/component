@@ -23,7 +23,7 @@ namespace simple {
      
     public: 
       // empty constructor for hpx purpose .. 
-      my_simple_component(){};  
+      my_simple_component(){}  
       my_simple_component(hpx::future<hpx::naming::id_type> && gid)
        : base_type(std::move(gid))
       {}

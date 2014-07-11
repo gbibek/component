@@ -6,10 +6,10 @@
 int hpx_main(){
   
     //typedef my_simple_component obj;    
-//    simple::my_simple_component obj(
-  //           hpx::components::new_<simple::server::my_simple_component>(hpx::find_here())); 
- 
-   // obj.distributeToAll();
+    hpx::simple::my_simple_component obj(
+             hpx::components::new_<hpx::simple::server::my_simple_component>(hpx::find_here())); 
+    obj.init_clint(20);
+    obj.distributeToAll();
  
     return hpx::finalize();
 }

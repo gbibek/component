@@ -22,3 +22,7 @@ HPX_REGISTER_MINIMAL_COMPONENT_FACTORY(simpleAccumulator,my_simple_component);
 HPX_REGISTER_ACTION(
     simpleAccumulator::wrapped_type::distributeToAll_action,
     my_simple_component_distributeToAll_action);
+
+HPX_REGISTER_ACTION(
+    simpleAccumulator::wrapped_type::init_action,
+    my_simple_component_init_action);

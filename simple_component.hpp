@@ -5,7 +5,6 @@
 #include <hpx/lcos/future.hpp>
 #include <hpx/runtime/components/stubs/stub_base.hpp>
 
-//server included
 
 
 
@@ -28,6 +27,7 @@ namespace hpx { namespace simple {
        : base_type(std::move(gid))
       {}
       // calls the void function that prints the message from a given locality
+      hpx::lcos::future<void> init_clint(size_t);
       hpx::lcos::future<void> distributeToAll();
   };
 }}

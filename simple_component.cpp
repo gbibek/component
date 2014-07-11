@@ -18,6 +18,6 @@ my_simple_component::distributeToAll(){
 
     BOOST_ASSERT(this->get_gid());
     typedef hpx::simple::server::my_simple_component::distributeToAll_action func;
-    hpx::async<func>(this->get_gid());
+    return hpx::async<func>(this->get_gid());
 
 }

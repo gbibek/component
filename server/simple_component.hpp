@@ -1,4 +1,5 @@
 
+#include <hpx/hpx.hpp>
 #include <hpx/hpx_fwd.hpp>
 #include <hpx/runtime/components/server/simple_component_base.hpp>
 #include <iostream>
@@ -10,7 +11,7 @@ namespace hpx { namespace simple { namespace server
 {
      
    class my_simple_component
-      : hpx::components::simple_component_base<my_simple_component>
+      : public hpx::components::simple_component_base<my_simple_component>
    {
       public:
         

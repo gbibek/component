@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 72ac56c9757f0412cbf5a9a7a01e67fef9f789e9
 #include <hpx/hpx.hpp>
 #include <hpx/hpx_fwd.hpp>
 #include <hpx/runtime/components/server/simple_component_base.hpp>
